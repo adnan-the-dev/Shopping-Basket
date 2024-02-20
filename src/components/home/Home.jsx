@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { arrayOfImages } from "../array";
 import Table from "../table/Table";
+import { AnimationBox, AnimationContainer, Image } from "./styled-component";
+import { Button } from "@mui/material";
 
 export default function Home() {
   const [selectedImage, setSelectedImage] = useState([]);
@@ -9,34 +11,24 @@ export default function Home() {
   };
   return (
     <>
-      <div>
-        <table>
-          <thead>
-            <tr>
-              <th>Image</th>
-              <th>Title</th>
-              <th>Price</th>
-            </tr>
-          </thead>
-          <tbody>
-            {arrayOfImages.map((image, index) => (
-              <tr key={index}>
-                <td>
-                  <img
-                    style={{ width: "50%" }}
-                    src={image.url}
-                    alt={image.title}
-                    onClick={() => handleImageClick(image)}
-                  />
-                </td>
-                <td>{image.title}</td>
-                <td>${image.price.toFixed(2)}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-        <Table selectedImage={selectedImage} setSelectedImage={setSelectedImage}/>
-      </div>
+      <AnimationContainer>
+        {arrayOfImages.map((item, i) => {
+          return (
+            <AnimationBox>
+              <Image
+                component="img"
+                onClick={() => handleImageClick(item)}
+                src={item.url}
+                alt="Image 1"
+              />
+            </AnimationBox>
+          );
+        })}
+        </AnimationContainer>
+      <Table
+        selectedImage={selectedImage}
+        setSelectedImage={setSelectedImage}
+      />
     </>
   );
 }

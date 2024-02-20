@@ -5,7 +5,6 @@ import {
   CartTextBox,
   ChildCartitem,
   MainDeleteBox,
-  SecondBox,
   SecondCartItem,
   TagBox,
   Text,
@@ -34,43 +33,25 @@ export default function Table({ selectedImage, setSelectedImage }) {
 
   return (
     <>
+      <CartItem color="true">Shopping Basket</CartItem>
+      <CartItem>You have {selectedImage.length} items in your basket</CartItem>
       <ChildCartitem>
-        <CartItem color="true">Shopping Basket</CartItem>
-        <CartItem>
-          You have {selectedImage.length} items in your basket
-        </CartItem>
         {selectedImage.map((item, i) => {
           return (
             <SecondCartItem key={i}>
-              {/* <CartImage component="img" src={item.url} alt="" /> */}
-              <Avatar sx={{ width: '56', height: '56',border:'1px solid' }} src={item.url} />
+              <Avatar
+                sx={{ width: "56", height: "56", border: "1px solid" }}
+                src={item.url}
+              />
               <CartTextBox>
                 <TagBox>
                   <Text tita="true">{item.title}</Text>
-                  {/* <Text active="true">Total: {item.price} Rs</Text> */}
                 </TagBox>
                 <MainDeleteBox>
                   <Box>
                     <Text active="true">{item.description}</Text>
-                    {/* <SecondBox>
-                      <Text active="true">Size:Pakistan</Text>
-                      <Text
-                        style={{
-                          color: "#939590",
-                          fontWeight: "normal",
-                          fontSize: "smaller",
-                        }}
-                        left="true"
-                      >
-                        <Typography>Quantity:Hellosf</Typography>
-                        <Typography style={{ color: "black" }}>
-                          Price:sfsfsf
-                        </Typography>
-                      </Text>
-                    </SecondBox> */}
                   </Box>
                   <Box onClick={() => removeItem(i)}>
-                    {/* <Box> */}
                     <MdDelete
                       size={25}
                       style={{ marginTop: "1rem", cursor: "pointer" }}
@@ -88,6 +69,7 @@ export default function Table({ selectedImage, setSelectedImage }) {
             marginRight: "0.1rem",
             fontSize: "1.8rem",
             fontWeight: "600",
+            marginRight: "-38rem",
           }}
         >
           £{total.toFixed(2)}
