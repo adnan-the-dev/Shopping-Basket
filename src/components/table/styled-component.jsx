@@ -64,7 +64,7 @@ export const TagBox = styled(Box)({
 
 export const Text = styled(Typography)(({ active, left,tita }) => ({
   fontWeight: active ? "" : "600",
-  fontSize: active ? ".900rem" : tita ? 'rem' : "1.25rem",
+  fontSize: active ? ".900rem" : tita ? '1rem' : "1.25rem",
   lineHeight: active ? "1.25rem" : "1.75rem",
   marginBottom: "0.25rem!important",
   color: active ? "#939590" : "#42463b",
