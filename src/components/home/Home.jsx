@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { arrayOfImages } from "../array";
 import Table from "../table/Table";
 import { AnimationBox, AnimationContainer, Image } from "./styled-component";
-import { Button } from "@mui/material";
 
 export default function Home() {
   const [selectedImage, setSelectedImage] = useState([]);
