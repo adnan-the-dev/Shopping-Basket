@@ -3,6 +3,9 @@ import img2 from '../assets/img2.png'
 import img3 from '../assets/img3.png'
 
 
+
+
+
 export const arrayOfImages = [
     {
       url: img1,
