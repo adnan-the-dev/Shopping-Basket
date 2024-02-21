@@ -13,6 +13,8 @@ import { Avatar, Box } from "@mui/material";
 import { MdDelete } from "react-icons/md";
 
 export default function Table({ selectedImage, setSelectedImage }) {
+
+  
   const total = selectedImage.reduce(
     (current, prev) => (current += prev.price),
     0

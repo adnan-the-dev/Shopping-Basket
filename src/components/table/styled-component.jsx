@@ -6,6 +6,8 @@ export const ChildCartitem = styled(Box)({
   alignItems: "center",
   justifyContent: "center",
   flexDirection: "column",
+  // border:'2px solid red'
+
 });
 
 export const CartItem = styled(Typography)(({ color }) => ({

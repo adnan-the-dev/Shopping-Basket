@@ -1,7 +1,12 @@
 import React, { useState } from "react";
 import { arrayOfImages } from "../array";
 import Table from "../table/Table";
-import { AnimationBox, AnimationContainer, Image } from "./styled-component";
+import {
+  AnimationBox,
+  AnimationContainer,
+  ButtonContainer,
+  Image,
+} from "./styled-component";
 
 export default function Home() {
   const [selectedImage, setSelectedImage] = useState([]);
@@ -13,17 +18,22 @@ export default function Home() {
       <AnimationContainer>
         {arrayOfImages.map((item, i) => {
           return (
-            <AnimationBox>
-              <Image
-                component="img"
-                onClick={() => handleImageClick(item)}
-                src={item.url}
-                alt="Image 1"
-              />
-            </AnimationBox>
+            <>
+              <AnimationBox key={i}>
+                <Image
+                  component="img"
+                  src={item.url}
+                  alt="Image 1"
+                />
+                {/* <ButtonContainer>Hello</ButtonContainer> */}
+                <ButtonContainer onClick={() => handleImageClick(item)} component="button">
+                  <span>{item.title}</span>
+                </ButtonContainer>
+              </AnimationBox>
+            </>
           );
         })}
-        </AnimationContainer>
+      </AnimationContainer>
       <Table
         selectedImage={selectedImage}
         setSelectedImage={setSelectedImage}
